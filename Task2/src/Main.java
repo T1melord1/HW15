@@ -16,6 +16,7 @@ public class Main {
 
     }
     public static void razdel(String input){
-        System.out.println(input.substring(input.indexOf(" ")));
+        System.out.println(input.substring(input.indexOf(" "), input.lastIndexOf(" ")).trim());
+        System.out.println(input.substring(input.lastIndexOf(" ")).trim());
     }
 }
