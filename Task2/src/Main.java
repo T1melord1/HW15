@@ -1,11 +1,9 @@
 import java.util.Scanner;
 
 public class Main {
-    public static final String ABC = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя-";
+    public static final String ABC = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя- ";
 
     public static void main(String[] args) {
-
-        //todo код писать тут. По желанию(рекомендуется) вынести код в методы.
         String credentials = credentials();
         if(!credentials.isEmpty()) {
             razdel(credentials);
@@ -26,23 +24,22 @@ public class Main {
             return input;
         }
         else {
-            System.out.println("Ввод не верен");
+            System.out.println("Введенная строка не является ФИО");
             return "";
         }
     }
 
     public static void razdel(String input) {
+        input = input.replace("-", " ");
         int firstSpace = input.indexOf(" ");
         int secondSpace = input.indexOf(" ", firstSpace + 1);
         if(firstSpace != -1 && secondSpace != -1) {
-            so
-            System.out.println("Фамилия: " + input.substring(0, input.indexOf(" " )).trim());
-            System.out.println("Имя: " + input.substring(input.indexOf(" "), input.lastIndexOf(" ")).trim());
-            System.out.println("Отчество: " + input.substring(input.lastIndexOf(" ")).trim());
+            System.out.println("Фамилия: " + input.substring(0, firstSpace).trim());
+            System.out.println("Имя: " + input.substring(firstSpace + 1, secondSpace).trim());
+            System.out.println("Отчество: " + input.substring(secondSpace + 1).trim());
         }
         else {
-            System.out.println("Ввод не верен");
+            System.out.println("Введенная строка не является ФИО");
         }
-
     }
 }
