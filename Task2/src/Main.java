@@ -35,6 +35,7 @@ public class Main {
         int firstSpace = input.indexOf(" ");
         int secondSpace = input.indexOf(" ", firstSpace + 1);
         if(firstSpace != -1 && secondSpace != -1) {
+            so
             System.out.println("Фамилия: " + input.substring(0, input.indexOf(" " )).trim());
             System.out.println("Имя: " + input.substring(input.indexOf(" "), input.lastIndexOf(" ")).trim());
             System.out.println("Отчество: " + input.substring(input.lastIndexOf(" ")).trim());
